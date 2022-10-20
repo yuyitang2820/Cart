@@ -48,10 +48,11 @@ def get_items():
 
     return rsp
 
-@app.route("/api/items_id/<id>", methods=["GET"])
-def get_items_by_id(id):
 
-    result = ShoppingResource.get_by_item_id(id)
+@app.route("/api/items_id/<item_id>", methods=["GET"])
+def get_items_by_id(item_id):
+
+    result = ShoppingResource.get_by_item_id(item_id)
 
     if result:
         rsp = Response(json.dumps(result), status=200, content_type="application.json")
